@@ -13,7 +13,7 @@ const Header = props => {
       <h1>
         <Link to="/">{props.text}</Link>
       </h1>
-      <a href="_" onClick={event => logOut(event)}>
+      <a href="_logout" onClick={event => logOut(event)}>
         Logout
       </a>
     </header>
