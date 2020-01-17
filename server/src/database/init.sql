@@ -8,7 +8,7 @@ CREATE TABLE users (
 
 CREATE TABLE games (
   id integer primary key autoincrement,
-  name varchar(30) not null
+  name varchar(30) not null unique
 );
 
 CREATE TABLE scores (

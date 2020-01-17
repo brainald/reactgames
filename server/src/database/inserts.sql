@@ -1,5 +1,12 @@
 begin transaction;
-INSERT INTO games(name) VALUES ('snake11'),('pictureMatch'),('ticTacToe'),('hangman'),('snake2');
+INSERT INTO games(name) VALUES ('picturematch');
+INSERT INTO games(name) VALUES ('picturematch2');
+INSERT INTO games(name) VALUES ('picturematch3');
+INSERT INTO games(name) VALUES ('picturematch4');
+INSERT INTO games(name) VALUES ('picturematch5');
+INSERT INTO games(name) VALUES ('picturematch6');
+INSERT INTO games(name) VALUES ('picturematch7');
+
 
 INSERT INTO users(name, email, password) VALUES('chris', 'freq@gmail.com', 'password');
 INSERT INTO users(name, email, password) VALUES('chris1', 'fre2q@gmail.com', 'password');

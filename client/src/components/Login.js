@@ -9,10 +9,6 @@ const Login = props => {
   function checkInputs() {
     if (!(username.length && password.length)) {
       setMessage("Please fill all inputs!");
-    } else if (username.length < 5) {
-      setMessage("Username is too short.");
-    } else if (password.length < 6) {
-      setMessage("Password is too short.");
     } else {
       setMessage("");
       return true;
@@ -32,6 +28,7 @@ const Login = props => {
           } else {
             localStorage.setItem("token", res.token);
             setMessage("");
+            props.history.push("/");
           }
         })
         .catch(res => console.log(res));

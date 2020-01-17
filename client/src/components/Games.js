@@ -7,17 +7,30 @@ class Games extends React.Component {
     this.state = {
       games: []
     };
+    this.makeFrames = this.makeFrames.bind(this);
   }
 
   async componentDidMount() {
     this.setState({ games: await Requests.get("/games") });
-    // console.log(this.state.games)
+    console.log(this.makeFrames());
   }
+
+  makeFrames = () => {
+    const frames = this.state.games.map(game => {
+      return (
+        <p key={game.id}>
+          {game.name}
+          </p>
+      );
+    });
+    return frames;
+  };
 
   render() {
     return (
       <div>
-        <h1>Games</h1>
+        <h2>Games</h2>
+        <div>{this.makeFrames()}</div>
       </div>
     );
   }
