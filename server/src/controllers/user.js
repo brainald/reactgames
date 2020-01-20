@@ -1,13 +1,13 @@
 // TODO users:
 //!   - Get all users
-//!   - Get users By id ( games, score )
+//!   - Get user By id ( games, score )
 //!   - Add users ( register/ sign up )
 
 const db = require('../database');
 
 exports.get = async (_, res) => {
   try {
-    const users = await db.all('SELECT name, email FROM users');
+    const users = await db.all('SELECT name, email, id FROM users');
     return res.status(200).json(users);
   } catch (e) {
     return res.status(500).send('Something went wrong/getAllUsers');
@@ -17,8 +17,8 @@ exports.get = async (_, res) => {
 exports.getById = async (req, res) => {
   try {
     const { id } = req.params;
-    const users = await db.get(
-      'SELECT users.name as username, users.email, games.name as gamename, scores.points FROM users, games, scores where scores.userId = $id and scores.gameId = games.id',
+    const users = await db.all(
+      'SELECT users.name as username, users.email, games.name as gamename, scores.points FROM users, games, scores where scores.userId = $id and users.id = scores.userId and scores.gameId = games.id',
       { $id: id },
     );
 

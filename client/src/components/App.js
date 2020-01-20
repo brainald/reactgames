@@ -3,9 +3,13 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./Header";
 import Registration from "./Registration";
 import Login from "./Login";
-import Games from "./Games";
-import Users from "./Users";
+import GameList from "./GameList";
+import Game from "./Game";
+import UserList from "./UserList";
+import User from "./User";
+import TopPlayers from "./TopPlayers";
 import ErrorNotFound from "./ErrorNotFound";
+
 import "../App.css";
 
 class App extends React.Component {
@@ -16,13 +20,13 @@ class App extends React.Component {
           <Header text="Intern Games" />
           <div>
             <Switch>
-              <Route exact path="/" component={Games} />
+              <Route exact path="/" component={GameList} />
               <Route exact path="/login" component={Login} />
-              <Route exact path="/games" component={Games} />
-              <Route exact path="/games/:id" component={Games} />
-              <Route exact path="/users" component={Users} />
-              <Route exact path="/users/:id" component={Users} />
-              {/* <Route path="/scores" component={Scores} /> */}
+              <Route exact path="/games" component={GameList} />
+              <Route exact path="/games/:id" component={Game} />
+              <Route exact path="/users" component={UserList} />
+              <Route exact path="/users/:id" component={User} />
+              <Route path="/scores" component={TopPlayers} />
               {/* <Route path="/scores/:id" component={Scores} /> */}
               {/* <Route path="/scores/games" component={Scores} /> */}
               <Route path="/registration" component={Registration} />
