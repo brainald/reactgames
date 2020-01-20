@@ -8,6 +8,7 @@ import Game from "./Game";
 import UserList from "./UserList";
 import User from "./User";
 import TopPlayers from "./TopPlayers";
+import ScoresById from "./ScoresById";
 import ErrorNotFound from "./ErrorNotFound";
 
 import "../App.css";
@@ -26,10 +27,10 @@ class App extends React.Component {
               <Route exact path="/games/:id" component={Game} />
               <Route exact path="/users" component={UserList} />
               <Route exact path="/users/:id" component={User} />
-              <Route path="/scores" component={TopPlayers} />
-              {/* <Route path="/scores/:id" component={Scores} /> */}
+              <Route exact path="/scores" component={TopPlayers} />
+              <Route exact path="/scores/:id" component={ScoresById} />
               {/* <Route path="/scores/games" component={Scores} /> */}
-              <Route path="/registration" component={Registration} />
+              <Route exact path="/registration" component={Registration} />
               <Route component={ErrorNotFound} />
             </Switch>
           </div>

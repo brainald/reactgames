@@ -1,5 +1,68 @@
-.App {
+html {
+  background-image: radial-gradient( circle at top right, hsl(112, 60%, 23%), hsl(226, 49%, 26%));
+  min-height: 100%;
+  height: auto;
+  overflow-x: hidden;
+  top: 0;
+  left: 0;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+header{
+  width: 100%;
+}
+
+header h1 { 
   text-align: center;
+}
+
+header a:link {
+  color: white;
+}
+
+/* visited link */
+
+header a:visited {
+  color: white;
+}
+
+/* mouse over link */
+
+header a:hover {
+  color: white;
+}
+
+/* selected link */
+
+header a:active {
+  color: white;
+}
+
+header a {
+  text-decoration: none;
+}
+
+.navbar {
+  display: table;
+  margin: 0 auto
+}
+
+.nav-list {
+  display: table-row
+}
+
+.nav-item {
+  display: table-cell;
+  padding:0 0 0 0.5em
 }
 
 .iframe-container {

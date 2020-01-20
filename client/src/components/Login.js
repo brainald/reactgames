@@ -37,7 +37,7 @@ const Login = props => {
 
   return (
     <div className="registerForm">
-      <h1>Login</h1>
+      <h2>Login</h2>
       <p>Please fill in this form to log in.</p>
       <hr></hr>
       <label className="username">

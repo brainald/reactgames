@@ -59,9 +59,7 @@ const Header = props => {
         <Link to="/">{props.text}</Link>
       </h1>
       <div className="navbar">
-        <ul className="nav-list">
           {localStorage.token ? userLink : loginRegLink}
-        </ul>
       </div>
     </header>
   );

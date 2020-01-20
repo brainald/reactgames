@@ -47,7 +47,7 @@ exports.getPlayersPerGame = async (_, res) => {
 exports.getById = async (req, res) => {
   try {
     const { id } = req.params;
-    const scores = await db.get('SELECT * FROM scores, games where scores.gameId = $id ', {
+    const scores = await db.all('SELECT scores.id as id, games.name, games.id as gameId, scores.userId, scores.points FROM scores, games where scores.gameId = games.id and scores.gameId = $id ', {
       $id: id,
     });
 

@@ -52,7 +52,7 @@ const Registration = props => {
 
   return (
     <div className="registerForm">
-      <h1>Register</h1>
+      <h2>Register</h2>
       <p>Please fill in this form to create an account.</p>
       <hr></hr>
       <label className="username">
