@@ -8,6 +8,8 @@ class Game extends React.Component {
     this.state = {
       game: {}
     };
+
+    this.setContainerAlign = this.setContainerAlign.bind(this);
   }
 
   async componentDidMount() {
@@ -17,7 +19,21 @@ class Game extends React.Component {
     }
   }
 
+  setContainerAlign(val) {
+    let container = document.getElementById("container");
+    if (container) {
+      console.log(container);
+      container.setAttribute("style", "align-items:" + val);
+    }
+  }
+
+  componentWillUnmount() {
+    this.setContainerAlign("center");
+  }
+
   render() {
+    this.setContainerAlign("unset");
+
     return (
       <div>
         <h2>Games</h2>

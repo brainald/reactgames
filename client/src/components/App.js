@@ -15,9 +15,10 @@ import "../App.css";
 
 class App extends React.Component {
   render() {
+
     return (
       <Router>
-        <div className="App container">
+        <div className="App" id="container">
           <Header text="Intern Games" />
           <div>
             <Switch>
