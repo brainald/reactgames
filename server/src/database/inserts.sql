@@ -1,12 +1,13 @@
 begin transaction;
-INSERT INTO games(name) VALUES ('picturematch');
-INSERT INTO games(name) VALUES ('picturematch2');
-INSERT INTO games(name) VALUES ('picturematch3');
-INSERT INTO games(name) VALUES ('picturematch4');
-INSERT INTO games(name) VALUES ('picturematch5');
-INSERT INTO games(name) VALUES ('picturematch6');
-INSERT INTO games(name) VALUES ('picturematch7');
-
+INSERT INTO games(name, imageUrl) 
+VALUES 
+('snake','images/snake.png'),
+('picturematch','images/picturematch.png'),
+('tictactoe','images/tictactoe.png'),
+('hangman','images/hangman.png'),
+('battleship','images/battleship.png'),
+('mathquiz', 'images/mathquiz.png'),
+('connectfour', 'images/connectfour.png');
 
 INSERT INTO users(name, email, password) VALUES('chris', 'freq@gmail.com', 'password');
 INSERT INTO users(name, email, password) VALUES('chris1', 'fre2q@gmail.com', 'password');

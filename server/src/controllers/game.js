@@ -1,13 +1,13 @@
 // TODO - games:
-//!     - Add games
-//!     - Get all games
-//!     - Get games by id ( top 10 scores order desc )
+//     - Add games
+//     - Get all games
+//     - Get games by id ( top 10 scores order desc )
 
 const db = require('../database');
 
 exports.get = async (_, res) => {
   try {
-    const games = await db.all('SELECT * FROM games');
+    const games = await db.all('SELECT name,id,imageUrl,description FROM games');
     return res.status(200).json(games);
   } catch (e) {
     return res.status(500).send('Something went wrong/getAllGames');
@@ -30,12 +30,13 @@ exports.getById = async (req, res) => {
 
 exports.post = async (req, res) => {
   try {
-    const { name } = req.body;
+    const { name, imageUrl } = req.body;
 
-    if (!name) return res.status(400).send('Bad request/AddGame');
+    if (!name || !imageUrl) return res.status(400).send('Bad request/AddGame');
 
-    const id = await db.run(`INSERT INTO games(name) VALUES ($name)`, {
+    const id = await db.run(`INSERT INTO games(name, imageUrl) VALUES ($name, $imageUrl)`, {
       $name: name,
+      $imageUrl: imageUrl,
     });
     return res.status(200).json({ id, name });
   } catch (e) {
